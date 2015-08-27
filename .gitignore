@@ -14,3 +14,5 @@ POM_04_WEB/target/classes/ec/infocenter/pom_04_web/jsfclases/ImalabClienteContro
 POM_04_WEB/target/classes/ec/infocenter/pom_04_web/jsfclases/ImalabReferenteController$ImalabReferenteControllerConverter.class
 *.class
 *.class
+POM_04_WEB/target/POM_04_WEB-1.0-SNAPSHOT/index.html
+*.html
