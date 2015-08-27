@@ -1,2 +1,16 @@
 *.netbeans_automatic_build
 POM_04_WEB/target/classes/Bundle.properties
+*.dpf
+*.class
+*.class
+*.class
+POM_04_WEB/target/classes/ec/infocenter/pom_04_web/jsfclases/ImalabCabeceraController$ImalabCabeceraControllerConverter.class
+*.class
+POM_04_WEB/target/classes/ec/infocenter/pom_04_web/jsfclases/ImalabCabeceraController$ImalabCabeceraControllerConverter.class
+*.class
+POM_04_WEB/target/classes/ec/infocenter/pom_04_web/jsfclases/ImalabClienteController$ImalabClienteControllerConverter.class
+*.class
+*.class
+POM_04_WEB/target/classes/ec/infocenter/pom_04_web/jsfclases/ImalabReferenteController$ImalabReferenteControllerConverter.class
+*.class
+*.class
