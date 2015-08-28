@@ -56,14 +56,6 @@ public class Conve implements Serializable {
      * @return the imalabCabecera
      */
     public ImalabCabecera getImalabCabecera() {
-        try {
-            System.out.println("llega a getImalabCabecera() ");
-            System.out.println("imalabCabecera. = " + imalabCabecera.getNumeroFactura());
-            System.out.println("imalabCabecera. = " + imalabCabecera.getId());
-            System.out.println("imalabCabecera.getImalabCliente().getNombres() = " + imalabCabecera.getImalabCliente().getNombres());
-
-        } catch (Exception e) {
-        }
         return imalabCabecera;
     }
 
@@ -72,6 +64,15 @@ public class Conve implements Serializable {
      */
     public void setImalabCabecera(ImalabCabecera imalabCabecera) {
         System.out.println("llega a setImalabCabecera() ");
+        try {
+            System.out.println("llega a getImalabCabecera() ");
+            System.out.println("imalabCabecera. = " + imalabCabecera.getNumeroFactura());
+            System.out.println("imalabCabecera. = " + imalabCabecera.getId());
+            System.out.println("imalabCabecera.getImalabCliente().getNombres() = " + imalabCabecera.getImalabCliente().getNombres());
+
+        } catch (Exception e) {
+        }
+
         this.imalabCabecera = imalabCabecera;
     }
 
