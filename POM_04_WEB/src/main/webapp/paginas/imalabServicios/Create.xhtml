@@ -22,7 +22,7 @@
                         <p:selectOneMenu id="imalabTipoExamen" value="#{imalabServiciosController.selected.imalabTipoExamen}" required="true" requiredMessage="#{bundle.EditImalabServiciosRequiredMessage_imalabTipoExamen}">
                             <f:selectItems value="#{imalabTipoExamenController.itemsAvailableSelectOne}"
                                            var="imalabTipoExamenItem"
-                                           itemValue="#{imalabTipoExamenItem}"/>
+                                           itemValue="#{imalabTipoExamenItem}" itemLabel="#{imalabTipoExamenItem.descripcion}"  />
                         </p:selectOneMenu>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{imalabServiciosController.create}" value="#{bundle.Save}" update="display,:ImalabServiciosListForm:datalist,:growl" oncomplete="handleSubmit(args,'ImalabServiciosCreateDialog');"/>

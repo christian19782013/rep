@@ -23,7 +23,7 @@
                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{imalabTipoExamenController.itemsAvailableSelectOne}"
                                            var="imalabTipoExamenItem"
-                                           itemValue="#{imalabTipoExamenItem}"/>
+                                           itemValue="#{imalabTipoExamenItem}"   itemLabel="#{imalabTipoExamenItem.descripcion}" />
                         </p:selectOneMenu>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{imalabServiciosController.update}" value="#{bundle.Save}" update="display,:ImalabServiciosListForm:datalist,:growl" oncomplete="handleSubmit(args, 'ImalabServiciosEditDialog');"/>

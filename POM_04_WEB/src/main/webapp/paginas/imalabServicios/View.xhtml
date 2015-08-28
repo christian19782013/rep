@@ -19,7 +19,7 @@
                         <h:outputText value="#{bundle.ViewImalabServiciosLabel_especificaciones}"/>
                         <h:outputText value="#{imalabServiciosController.selected.especificaciones}" title="#{bundle.ViewImalabServiciosTitle_especificaciones}"/>
                         <h:outputText value="#{bundle.ViewImalabServiciosLabel_imalabTipoExamen}"/>
-                        <h:outputText value="#{imalabServiciosController.selected.imalabTipoExamen}" title="#{bundle.ViewImalabServiciosTitle_imalabTipoExamen}"/>
+                        <h:outputText value="#{imalabServiciosController.selected.imalabTipoExamen.descripcion}" title="#{bundle.ViewImalabServiciosTitle_imalabTipoExamen}"/>
                     </p:panelGrid>
                     <p:commandButton value="#{bundle.Close}" onclick="ImalabServiciosViewDialog.hide()"/>
                 </h:panelGroup>
