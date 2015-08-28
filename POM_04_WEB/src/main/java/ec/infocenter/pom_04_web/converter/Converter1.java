@@ -7,8 +7,6 @@ package ec.infocenter.pom_04_web.converter;
 
 import ec.infocenter.pom_01_ldomain.ImalabCabecera;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.component.UIComponent;
@@ -28,37 +26,26 @@ public class Converter1 implements Converter {
 
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String value) {
-        System.out.println("object:" + value);
-
-        List<ImalabCabecera> lista = new ArrayList<>();
-        lista = getItemsAvailableSelectMany();
-        Iterator<ImalabCabecera> iterator = lista.iterator();
-
-        while (iterator.hasNext()) {
-            ImalabCabecera next = iterator.next();
-            if (next.getId().equals(new BigDecimal(value))) {
-                System.out.println("next:  " + next.toString());
-                return next;
-            }
-
-        }
-        return null;
+        //La parte complicada del converter en este caso es que se recibe 
+        //el id del entity como numero por ejemplo:87 no como se suponia la cadena ec.....[id=87]
+        //aca es donde se tranforma del número a objeto y se almacena el el set objeto en el managedbean
+        ImalabCabecera find = ejbFacade.find(new BigDecimal(value));
+        return find;
     }
 
     @Override
     public String getAsString(FacesContext context, UIComponent component, Object value) {
-        System.out.println("string:" + value);
-        
-        System.out.println("(valueObj instanceof ImalabCabecera) = " + (value instanceof ImalabCabecera));
+        //en Object value viene value ec.infocenter.pom_01_ldomain.ImalabCabecera[ id=62 ]
+        //no como yo suponia al inicio que venia el objeto de la interface
+        //de aca se extrae su id y se retorna, este método sirve solo cuando se esta dibujando 
+        //la página para llenar el value ej:
+//        <select id="j_idt5:iterator_input" name="j_idt5:iterator_input" tabindex="-1" onchange="mojarra.ab('j_idt5:iterator',event,'change',0,0)">
+//            <option>Choose item</option>
+//            <option value="62">bNbDEsDTaOzGOxkXzIFnsiHjjVUsyMcTMCrsjJwYixcfrKIowySpOymqfvaVwnvkdNbhI</option>
+//            <option value="81">bcqHIRuQyBQqceopAjnPJVYaRguZVgKifCiHrbVqRqht</option>
+//        </select>
         BigDecimal k = (value instanceof ImalabCabecera) ? ((ImalabCabecera) value).getId() : null;
-
-        
-        System.out.println("ec.infocenter.pom_01_ldomain.ImalabCabecera[ id=" + k + " ]");
-        
-        
-        System.out.println("k = " + k);
         return (k != null) ? k.toString() : null;
-
     }
 
     public List<ImalabCabecera> getItemsAvailableSelectMany() {
