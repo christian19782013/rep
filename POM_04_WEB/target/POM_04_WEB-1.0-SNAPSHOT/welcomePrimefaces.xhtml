@@ -4,7 +4,6 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
-
     <f:view contentType="text/html">
         <h:head>
             <f:facet name="first">
@@ -12,65 +11,16 @@
                 <title>PrimeFaces</title>
             </f:facet>
         </h:head>
-
         <h:body>
 
             <h:form>
                 <p:selectOneMenu  id="iterator" value="#{conve.imalabCabecera}"  converter="convv"  >
                     <f:selectItem itemLabel="Choose item" noSelectionOption="true" />
-
                     <f:selectItems value="#{conve.itemsAvailableSelectMany}"  var="entity"  itemValue="#{entity}" itemLabel="#{entity.imalabCliente.apellidos}" />
                     <f:ajax event="change"  />
                 </p:selectOneMenu>
-
-
-
-                <h1><h:outputText value="List"/></h1>
-                <p:dataTable value="#{conve.itemsAvailableSelectMany}" var="item">
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Id"/>
-                        </f:facet>
-                        <h:outputText value="#{item.id}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="FechaFactura"/>
-                        </f:facet>
-                        <h:outputText value="#{item.fechaFactura}">
-                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                        </h:outputText>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="NumeroFactura"/>
-                        </f:facet>
-                        <h:outputText value="#{item.numeroFactura}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="ImalabCliente"/>
-                        </f:facet>
-                        <h:outputText value="#{item.imalabCliente.apellidos}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="ImalabDatosRuc"/>
-                        </f:facet>
-                        <h:outputText value="#{item.imalabDatosRuc}"/>
-                    </p:column>
-                </p:dataTable>
-
-
-
-
-
-
-
             </h:form>
-
         </h:body>
-
     </f:view>
 </html>
 
