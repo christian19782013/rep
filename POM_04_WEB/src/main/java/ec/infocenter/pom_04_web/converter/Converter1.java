@@ -28,34 +28,15 @@ public class Converter1 implements Converter {
 
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String value) {
-        System.out.println("getAsObject " + value);
-
-        List<ImalabCabecera> lista = new ArrayList<>();
-        lista = getItemsAvailableSelectMany();
-        Iterator<ImalabCabecera> iterator = lista.iterator();
-
-        while (iterator.hasNext()) {
-            ImalabCabecera next = iterator.next();
-            if (next.toString().equalsIgnoreCase(value)) {
-                System.out.println("next = " + next);
-                return next;
-            }
-        }
+        System.out.println("object");
         return null;
     }
 
     @Override
     public String getAsString(FacesContext context, UIComponent component, Object value) {
-        try {
-            System.out.println("getAsString---------------- = " + value);
-            System.out.println("(valueObj instanceof ImalabCabecera) = " + (value instanceof ImalabCabecera));
-            BigDecimal k = (value instanceof ImalabCabecera) ? ((ImalabCabecera) value).getId() : null;
-            return (k != null) ? k.toString() : null;
-//        return ((ImalabCabecera) value).toString();
+        System.out.println("string = ");
+        return null;
 
-        } catch (Exception e) {
-            return null;
-        }
     }
 
     public List<ImalabCabecera> getItemsAvailableSelectMany() {
