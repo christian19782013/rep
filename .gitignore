@@ -1,3 +1,5 @@
 *.class
 POM_04_WEB/target/classes/Bundle.properties
 *.netbeans_automatic_build
+*.xhtml
+/POM_01_LDOMAIN/target/
