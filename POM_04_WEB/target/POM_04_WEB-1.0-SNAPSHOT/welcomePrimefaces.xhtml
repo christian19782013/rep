@@ -16,10 +16,10 @@
         <h:body>
 
             <h:form>
-                <p:selectOneMenu  id="iterator"  converter="convv"  >
+                <p:selectOneMenu  id="iterator" value="#{conve.imalabCabecera}"  converter="convv"  >
                     <f:selectItem itemLabel="Choose item" noSelectionOption="true" />
 
-                    <f:selectItems value="#{conve.itemsAvailableSelectMany}"  var="entity"  itemValue="#{entity}" itemLabel="#{entity.numeroFactura}" />
+                    <f:selectItems value="#{conve.itemsAvailableSelectMany}"  var="entity"  itemValue="#{entity}" itemLabel="#{entity.imalabCliente.apellidos}" />
                     <f:ajax event="change"  />
                 </p:selectOneMenu>
 
